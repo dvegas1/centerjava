@@ -5,6 +5,8 @@
  */
 //package com.example;
 
+import com.example.PDFTableExtractor;
+import com.example.Table;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;

@@ -5,10 +5,9 @@
  */
 package com.giaybac.traprange.test;
 
-import com.example.Table;
-import com.example.TableCell;
-import com.example.TableRow;
+
 import org.junit.Test;
+import com.example.*;
 
 /**
  *

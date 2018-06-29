@@ -5,8 +5,7 @@
  */
 package com.giaybac.traprange.test;
 
-import com.example.PDFTableExtractor;
-import com.example.Table;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,6 +15,8 @@ import java.nio.file.Paths;
 import java.util.List;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.Test;
+import com.example.*;
+
 
 /**
  *

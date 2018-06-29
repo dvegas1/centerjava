@@ -80,8 +80,7 @@
             <version>2.5-20081211</version>
             <type>jar</type>
         </dependency>
-
-    </dependencies>
+  </dependencies>
 	
   <groupId>org.example</groupId>
   <artifactId>herokujavasample</artifactId>

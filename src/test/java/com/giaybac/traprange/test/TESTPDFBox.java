@@ -5,7 +5,7 @@
  */
 package com.giaybac.traprange.test;
 
-import com.example.TrapRangeBuilder;
+
 import com.google.common.collect.Range;
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +19,9 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.apache.pdfbox.text.TextPosition;
 import org.junit.Test;
+import com.example.*;
+
+
 
 /**
  *

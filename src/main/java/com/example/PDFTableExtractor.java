@@ -5,9 +5,6 @@
  */
 package com.example;
 
-import com.example.Table;
-import com.example.TableCell;
-import com.example.TableRow;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
