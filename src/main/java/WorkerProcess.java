@@ -1,6 +1,6 @@
 public class WorkerProcess
 {
-    public static void main(String[] args)
+   /* public static void main(String[] args)
     {
         while(true) {
         	try { 
@@ -8,5 +8,5 @@ public class WorkerProcess
             } catch(InterruptedException e) {}
             System.out.println("Worker process woke up");
         }
-    }    
+    }    */
 }
