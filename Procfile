@@ -1,1 +1,1 @@
-sh target/bin/oneoff
+worker: sh target/bin/worker
