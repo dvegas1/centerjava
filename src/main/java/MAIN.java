@@ -83,7 +83,8 @@ public class MAIN {
               printHelp();
         } else {
             //SpringApplication.run(MAIN.class, args);
-            extractTables(args);
+            String[] args1={"-in","_Docs/sample-1.pdf","-out","_Docs/result/idx.html","-el","0,1,-1"};
+            extractTables(args1);
         }
     }
 
