@@ -3,7 +3,7 @@
  * 
 * Released under the MIT license
  */
-package com.example;
+//package com.example;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -24,7 +24,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.example.Table;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.primitives.Ints;
@@ -50,7 +49,7 @@ public class MAIN {
     @Autowired
     private DataSource dataSource;
 
-    private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
+  //  private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
 
     /**
      * -in: source <br/>
@@ -148,7 +147,8 @@ public class MAIN {
                 }
             }
         } catch (Exception e) {
-            logger.error(null, e);
+           // logger.error(null, e);
+            System.err.println("NULL" + e);
         }
     }
 
@@ -162,7 +162,8 @@ public class MAIN {
                 .append("\t-ep: all pages except these pages. Ex: 1,2\n")
                 .append("\t-h: help\n")
                 .append("---");
-        logger.info(help.toString());
+       // logger.info(help.toString());
+        System.out.println(help.toString());
     }
 
     private static List<Integer> getPages(String[] args) {
