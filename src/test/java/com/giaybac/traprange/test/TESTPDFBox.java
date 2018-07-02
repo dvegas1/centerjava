@@ -48,7 +48,7 @@ public class TESTPDFBox extends PDFTextStripper {
     @Test
     public void test() throws IOException {
         String homeDirectory = System.getProperty("user.dir");
-        String filePath = Paths.get(homeDirectory, "_Docs", "sample-1.pdf").toString();
+        String filePath = Paths.get(homeDirectory, "target\\_Docs","sample-1.pdf").toString();
         File pdfFile = new File(filePath);
         PDDocument pdDocument = PDDocument.load(pdfFile);
         //PrintTextLocations printer = new PrinTextLocations();

@@ -1,3 +1,4 @@
+
 /**
  * Copyright (C) 2016, GIAYBAC
  * 
@@ -29,12 +30,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.primitives.Ints;
+import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import org.apache.log4j.xml.DOMConfigurator;
-
 
 /**
  *
@@ -50,9 +55,11 @@ public class MAIN {
 
     @Autowired
     private DataSource dataSource;
+    public static String carptausuario = "_Docs";
+    public static String carptausuarioExtract = "result";
+    public static File Fresult;
 
   //  private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
-
     /**
      * -in: source <br/>
      * -out: target  <br/>
@@ -66,33 +73,75 @@ public class MAIN {
     public static void main(String[] args) throws Exception {
 
 //        SpringApplication.run(MAIN.class, args);
-
       //  DOMConfigurator.configure("log4j.xml");
-
        // String[] args1 ={"dssd","dsdfs"};
         //String[] args1={"-in","idx.pdf","-out","idx.html","-el","0,1,-1"};
         //Log4jInitListener
-        
         //by logging.config="file:/data/log/report-log4j.properties";
-                
         //PropertyConfigurator.configure(MAIN.class.getResource("/com/giaybac/traprange/log4j.properties"));
+        //createTempFile("_Docs", "");
+        // File  path = new File (System.getProperty("user.dir")+carptausuario);
+        File validator = new File(System.getProperty("user.dir") + "\\target\\" + carptausuario);
+        Fresult = new File(System.getProperty("user.dir") + "\\target\\" + carptausuario + "\\" + carptausuarioExtract);
 
         if (args.length == 1 && "-h".equals(args[0])) {
-           // SpringApplication.run(MAIN.class, args);
+            // SpringApplication.run(MAIN.class, args);
             System.out.println("printHelp");
-              printHelp();
+            printHelp();
         } else {
             //SpringApplication.run(MAIN.class, args);
-            String[] args1={"-in","_Docs/sample-1.pdf","-out","_Docs/result/idx.html","-el","0,1,-1"};
+            for (int i = 0; i < 5; i++) {
+                
+            
+            String[] args1 = {"-in",carptausuario+"/sample-"+i+".pdf", "-out",carptausuario+"/"+carptausuarioExtract+"/idx"+i+".html", "-el", "0,1,-1"};
             extractTables(args1);
-        }
+
+
+        
+        
     }
+    }
+}
 
-   /* @RequestMapping("/")
-    String index() {
-        return "index";
-    }*/
 
+/* @RequestMapping("/")
+ String index() {
+ return "index";
+ }*/
+public static boolean directori(File  directorio){
+
+        boolean si;
+        if(directorio.isDirectory()){
+            System.out.println("El directorio existe " + directorio.getAbsolutePath());
+            Fresult.mkdir();
+            si=true;
+            
+        }else{
+            directorio.mkdir();
+            Fresult.mkdir();
+            
+               }
+        System.out.println(directorio.getAbsolutePath());
+        System.out.println(Fresult.getAbsolutePath());
+        
+        return true;
+    }
+  
+
+//String filePath = Paths.get(homeDirectory, "_Docs", "sample-1.pdf").toString();
+            
+        /*    File file = new File(homeDirectory + "\\" + nombre);
+//--
+            //Path toCreatePath = Paths.get(file.toURI());
+            String filePath = Paths.get(homeDirectory, "_Docs", "sample-1.pdf").toString();
+            
+            if (!d.exists(filePath)) {
+                Files.createDirectories(filePath);
+            }*/
+  
+     
+
+    
     
     
     private static void extractTables(String[] args) {
