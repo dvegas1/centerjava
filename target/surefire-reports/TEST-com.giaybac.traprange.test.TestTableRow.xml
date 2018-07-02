@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.giaybac.traprange.test.TestTableRow" time="0.001" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="com.giaybac.traprange.test.TestTableRow" time="0" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_40\jre\bin"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_40\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Users\dvegas\AppData\Roaming\NetBeans\8.0.2\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Users\dvegas\AppData\Roaming\NetBeans\8.0.2\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="es"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -60,5 +60,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="doTest" classname="com.giaybac.traprange.test.TestTableRow" time="0.001"/>
+  <testcase name="doTest" classname="com.giaybac.traprange.test.TestTableRow" time="0"/>
 </testsuite>

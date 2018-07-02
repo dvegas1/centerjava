@@ -71,7 +71,7 @@ public class MAIN {
      *
      */
     public static void main(String[] args) throws Exception {
-
+        
 //        SpringApplication.run(MAIN.class, args);
       //  DOMConfigurator.configure("log4j.xml");
        // String[] args1 ={"dssd","dsdfs"};
@@ -81,8 +81,10 @@ public class MAIN {
         //PropertyConfigurator.configure(MAIN.class.getResource("/com/giaybac/traprange/log4j.properties"));
         //createTempFile("_Docs", "");
         // File  path = new File (System.getProperty("user.dir")+carptausuario);
+        System.out.println("Directorio actual " + System.getProperty("user.dir"));
         File validator = new File(System.getProperty("user.dir") + "\\target\\" + carptausuario);
         Fresult = new File(System.getProperty("user.dir") + "\\target\\" + carptausuario + "\\" + carptausuarioExtract);
+        directori(validator);
 
         if (args.length == 1 && "-h".equals(args[0])) {
             // SpringApplication.run(MAIN.class, args);
@@ -90,16 +92,18 @@ public class MAIN {
             printHelp();
         } else {
             //SpringApplication.run(MAIN.class, args);
-            for (int i = 0; i < 5; i++) {
+
                 
             
-            String[] args1 = {"-in",carptausuario+"/sample-"+i+".pdf", "-out",carptausuario+"/"+carptausuarioExtract+"/idx"+i+".html", "-el", "0,1,-1"};
+            String[] args1 = {"-in","target\\"+carptausuario+"\\sample-1.pdf", " -out ","target\\"+carptausuario+"\\"+carptausuarioExtract+"\\sample-1.html", "-el", "0,1,-1"};
+            
+            System.out.println("ARGUNMENTOS : " + "-in "+"target\\"+carptausuario+"\\sample-1.pdf"+ " -out " + "target\\carptausuario"+"\\"+carptausuarioExtract+"\\sample-"+1+".html"+ " -el"+ " 0,1,-1");
             extractTables(args1);
 
 
         
         
-    }
+    
     }
 }
 
@@ -118,7 +122,9 @@ public static boolean directori(File  directorio){
             
         }else{
             directorio.mkdir();
+            if(directorio.isDirectory()){
             Fresult.mkdir();
+            }
             
                }
         System.out.println(directorio.getAbsolutePath());
@@ -145,6 +151,7 @@ public static boolean directori(File  directorio){
     
     
     private static void extractTables(String[] args) {
+        
         try {
             List<Integer> pages = getPages(args);
             List<Integer> exceptPages = getExceptPages(args);
@@ -200,7 +207,7 @@ public static boolean directori(File  directorio){
             }
         } catch (Exception e) {
            // logger.error(null, e);
-            System.err.println("NULL" + e);
+            System.err.println("NULL " + e);
         }
     }
 
