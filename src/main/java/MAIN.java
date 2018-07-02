@@ -5,7 +5,6 @@
 * Released under the MIT license
  */
 //package com.example;
-
 import com.example.PDFTableExtractor;
 import com.example.Table;
 import com.zaxxer.hikari.HikariConfig;
@@ -59,7 +58,7 @@ public class MAIN {
     public static String carptausuarioExtract = "result";
     public static File Fresult;
 
-  //  private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
+    //  private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
     /**
      * -in: source <br/>
      * -out: target  <br/>
@@ -71,10 +70,10 @@ public class MAIN {
      *
      */
     public static void main(String[] args) throws Exception {
-        
+
 //        SpringApplication.run(MAIN.class, args);
-      //  DOMConfigurator.configure("log4j.xml");
-       // String[] args1 ={"dssd","dsdfs"};
+        //  DOMConfigurator.configure("log4j.xml");
+        // String[] args1 ={"dssd","dsdfs"};
         //String[] args1={"-in","idx.pdf","-out","idx.html","-el","0,1,-1"};
         //Log4jInitListener
         //by logging.config="file:/data/log/report-log4j.properties";
@@ -93,65 +92,56 @@ public class MAIN {
         } else {
             //SpringApplication.run(MAIN.class, args);
 
-                
+        //    String[] args1 = {"-in", "target\\Docs\\sample-1.pdf", "-out", "result\\sample-1.html", "-el", "0,1,-1"};
+
+String[] args1 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-1.pdf", "-out", "result\\sample-1.html", "-el","0,1,-1"};
+String[] args2 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-2.html", "-el","-el","0,1"};
+String[] args3 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"+sample-3.html", "-el", "-ep", "0"};
+String[] args4 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-4.html", "-el", "-el", "0"};
+String[] args5 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-5.html", "-el","-el","0@0,1@0"};
             
-            String[] args1 = {"-in","target\\"+carptausuario+"\\sample-1.pdf", " -out ","target\\"+carptausuario+"\\"+carptausuarioExtract+"\\sample-1.html", "-el", "0,1,-1"};
-            
-            System.out.println("ARGUNMENTOS : " + "-in "+"target\\"+carptausuario+"\\sample-1.pdf"+ " -out " + "target\\carptausuario"+"\\"+carptausuarioExtract+"\\sample-"+1+".html"+ " -el"+ " 0,1,-1");
+            System.out.println("ARGUNMENTOS : " + "-in " + "target\\" + carptausuario + "\\sample-1.pdf" + " -out " + "target\\carptausuario" + "\\" + carptausuarioExtract + "\\sample-" + 1 + ".html" + " -el" + " 0,1,-1");
             extractTables(args1);
 
-
-        
-        
-    
+        }
     }
-}
 
 
-/* @RequestMapping("/")
- String index() {
- return "index";
- }*/
-public static boolean directori(File  directorio){
+    /* @RequestMapping("/")
+     String index() {
+     return "index";
+     }*/
+    public static boolean directori(File directorio) {
 
         boolean si;
-        if(directorio.isDirectory()){
+        if (directorio.isDirectory()) {
             System.out.println("El directorio existe " + directorio.getAbsolutePath());
             Fresult.mkdir();
-            si=true;
-            
-        }else{
+            si = true;
+
+        } else {
             directorio.mkdir();
-            if(directorio.isDirectory()){
-            Fresult.mkdir();
+            if (directorio.isDirectory()) {
+                Fresult.mkdir();
             }
-            
-               }
+
+        }
         System.out.println(directorio.getAbsolutePath());
         System.out.println(Fresult.getAbsolutePath());
-        
+
         return true;
     }
-  
 
 //String filePath = Paths.get(homeDirectory, "_Docs", "sample-1.pdf").toString();
+    /*    File file = new File(homeDirectory + "\\" + nombre);
+     //--
+     //Path toCreatePath = Paths.get(file.toURI());
+     String filePath = Paths.get(homeDirectory, "_Docs", "sample-1.pdf").toString();
             
-        /*    File file = new File(homeDirectory + "\\" + nombre);
-//--
-            //Path toCreatePath = Paths.get(file.toURI());
-            String filePath = Paths.get(homeDirectory, "_Docs", "sample-1.pdf").toString();
-            
-            if (!d.exists(filePath)) {
-                Files.createDirectories(filePath);
-            }*/
-  
-     
-
-    
-    
-    
+     if (!d.exists(filePath)) {
+     Files.createDirectories(filePath);
+     }*/
     private static void extractTables(String[] args) {
-        
         try {
             List<Integer> pages = getPages(args);
             List<Integer> exceptPages = getExceptPages(args);
@@ -170,8 +160,7 @@ public static boolean directori(File  directorio){
                 extractor.exceptPage(exceptPage);
             }
             //except lines
-            List<Integer> exceptLineIdxs = new ArrayList();
-            
+            List<Integer> exceptLineIdxs = new ArrayList<>();
             Multimap<Integer, Integer> exceptLineInPages = LinkedListMultimap.create();
             for (Integer[] exceptLine : exceptLines) {
                 if (exceptLine.length == 1) {
@@ -203,11 +192,11 @@ public static boolean directori(File  directorio){
                 try {
                     writer.close();
                 } catch (Exception e) {
+                    System.err.println("Error " + e);
                 }
             }
         } catch (Exception e) {
-           // logger.error(null, e);
-            System.err.println("NULL " + e);
+            System.err.println("Error " + (e));
         }
     }
 
@@ -221,7 +210,7 @@ public static boolean directori(File  directorio){
                 .append("\t-ep: all pages except these pages. Ex: 1,2\n")
                 .append("\t-h: help\n")
                 .append("---");
-       // logger.info(help.toString());
+        // logger.info(help.toString());
         System.out.println(help.toString());
     }
 
