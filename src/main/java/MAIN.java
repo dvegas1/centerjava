@@ -5,6 +5,8 @@
 * Released under the MIT license
  */
 //package com.example;
+
+
 import com.example.PDFTableExtractor;
 import com.example.Table;
 import com.zaxxer.hikari.HikariConfig;
@@ -57,6 +59,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
+
+import java.util.Properties;
+
+import javax.mail.Session;
 
 
 
@@ -135,11 +141,9 @@ String[] args5 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-5.h
             extractTables(args4);
             extractTables(args5);
             
+        EmailUtil.sendMail();
+        //sendEmail.enviar();
 
-            
-      
-
-                  
           
         }
         
