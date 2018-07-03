@@ -74,8 +74,8 @@ public class MAIN {
 
     @Autowired
     private DataSource dataSource;
-    public static String carptausuario = "_Docs";
-    public static String carptausuarioExtract = "result";
+    public static String carptausuario = "target\\_Docs";
+    public static String carptausuarioExtract = "target\\_Docs\\result";
     public static File Fresult;
 
     //  private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
@@ -102,7 +102,7 @@ public class MAIN {
         // File  path = new File (System.getProperty("user.dir")+carptausuario);
         System.out.println("Directorio actual " + System.getProperty("user.dir"));
         File validator = new File(System.getProperty("user.dir")  +"\\"+ carptausuario);
-        Fresult = new File(System.getProperty("user.dir") + carptausuario + "\\" + carptausuarioExtract);
+        Fresult = new File(System.getProperty("user.dir") +"\\"+ carptausuarioExtract);
         directori(validator);
 
         if (args.length == 1 && "-h".equals(args[0])) {
@@ -114,11 +114,11 @@ public class MAIN {
 
         //    String[] args1 = {"-in", "target\\Docs\\sample-1.pdf", "-out", "result\\sample-1.html", "-el", "0,1,-1"};
 
-String[] args1 = {"-in",carptausuario+"\\"+"sample-1.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-1.html", "-el","0,1,-1"};
-String[] args2 = {"-in",carptausuario+"\\"+"sample-2.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-2.html", "-el","0,1"};
-String[] args3 = {"-in",carptausuario+"\\"+"sample-3.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-3.html", "-ep","0"};
-String[] args4 = {"-in",carptausuario+"\\"+"sample-4.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-4.html", "-el","0"};
-String[] args5 = {"-in",carptausuario+"\\"+"sample-5.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-5.html", "-el","0@0,1@0"};
+String[] args1 = {"-in",carptausuario+"\\"+"sample-1.pdf", "-out",carptausuarioExtract+"\\sample-1.html", "-el","0,1,-1"};
+String[] args2 = {"-in",carptausuario+"\\"+"sample-2.pdf", "-out",carptausuarioExtract+"\\sample-2.html", "-el","0,1"};
+String[] args3 = {"-in",carptausuario+"\\"+"sample-3.pdf", "-out",carptausuarioExtract+"\\sample-3.html", "-ep","0"};
+String[] args4 = {"-in",carptausuario+"\\"+"sample-4.pdf", "-out",carptausuarioExtract+"\\sample-4.html", "-el","0"};
+String[] args5 = {"-in",carptausuario+"\\"+"sample-5.pdf", "-out",carptausuarioExtract+"\\sample-5.html", "-el","0@0,1@0"};
 
 
 /*String[] args2 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-2.html", "-el","-el","0,1"};
