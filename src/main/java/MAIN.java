@@ -58,6 +58,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 
+
+
 /**
  *
  * @author thoqbk
@@ -116,7 +118,7 @@ String[] args1 = {"-in",carptausuario+"\\"+"sample-1.pdf", "-out",carptausuario+
 String[] args2 = {"-in",carptausuario+"\\"+"sample-2.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-2.html", "-el","0,1"};
 String[] args3 = {"-in",carptausuario+"\\"+"sample-3.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-3.html", "-ep","0"};
 String[] args4 = {"-in",carptausuario+"\\"+"sample-4.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-4.html", "-el","0"};
-String[] args5 = {"-in",carptausuario+"\\"+"sample-5.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-5.html", "-el","0@0,1@0|"};
+String[] args5 = {"-in",carptausuario+"\\"+"sample-5.pdf", "-out",carptausuario+"\\"+carptausuarioExtract+"\\sample-5.html", "-el","0@0,1@0"};
 
 
 /*String[] args2 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-2.html", "-el","-el","0,1"};
@@ -124,13 +126,14 @@ String[] args3 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"+sample-3.
 String[] args4 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-4.html", "-el", "-el", "0"};
 String[] args5 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-5.html", "-el","-el","0@0,1@0"};*/
             
-            System.out.println("ARGUNMENTOS : " + "-in " +  carptausuario + "\\sample-1.pdf" + " -out " + "target\\carptausuario" + "\\" + carptausuarioExtract + "\\sample-" + 1 + ".html" + " -el" + " 0,1,-1");
+            //System.out.println("ARGUNMENTOS : " + "-in " +  carptausuario + "\\sample-1.pdf" + " -out " + "target\\carptausuario" + "\\" + carptausuarioExtract + "\\sample-" + 1 + ".html" + " -el" + " 0,1,-1");
           
             extractTables(args1);
             extractTables(args2);
             extractTables(args3);
             extractTables(args4);
             extractTables(args5);
+            
 
             
       
@@ -141,10 +144,6 @@ String[] args5 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-5.h
         
     }
 
-  @RequestMapping("/")
-  String index() {
-    return "index";
-  }
     /* @RequestMapping("/")
      String index() {
      return "index";
