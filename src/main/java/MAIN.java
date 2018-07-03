@@ -77,6 +77,7 @@ public class MAIN {
     public static String carptausuario = "target\\_Docs";
     public static String carptausuarioExtract = "target\\_Docs\\result";
     public static File Fresult;
+    public static String result="result";
 
     //  private static final Logger logger = LoggerFactory.getLogger(MAIN.class);
     /**
@@ -114,11 +115,11 @@ public class MAIN {
 
         //    String[] args1 = {"-in", "target\\Docs\\sample-1.pdf", "-out", "result\\sample-1.html", "-el", "0,1,-1"};
 
-String[] args1 = {"-in",carptausuario+"\\"+"sample-1.pdf", "-out",carptausuarioExtract+"\\sample-1.html", "-el","0,1,-1"};
-String[] args2 = {"-in",carptausuario+"\\"+"sample-2.pdf", "-out",carptausuarioExtract+"\\sample-2.html", "-el","0,1"};
-String[] args3 = {"-in",carptausuario+"\\"+"sample-3.pdf", "-out",carptausuarioExtract+"\\sample-3.html", "-ep","0"};
-String[] args4 = {"-in",carptausuario+"\\"+"sample-4.pdf", "-out",carptausuarioExtract+"\\sample-4.html", "-el","0"};
-String[] args5 = {"-in",carptausuario+"\\"+"sample-5.pdf", "-out",carptausuarioExtract+"\\sample-5.html", "-el","0@0,1@0"};
+String[] args1 = {"-in","_Docs\\"+"sample-1.pdf", "-out","_Docs\\result\\sample-1.html", "-el","0,1,-1"};
+String[] args2 = {"-in","_Docs\\"+"sample-2.pdf", "-out","_Docs\\result\\sample-2.html", "-el","0,1"};
+String[] args3 = {"-in","_Docs\\"+"sample-3.pdf", "-out","_Docs\\result\\sample-3.html", "-ep","0"};
+String[] args4 = {"-in","_Docs\\"+"sample-4.pdf", "-out","_Docs\\result\\sample-4.html", "-el","0"};
+String[] args5 = {"-in","_Docs\\"+"sample-5.pdf", "-out","_Docs\\result\\sample-5.html", "-el","0@0,1@0"};
 
 
 /*String[] args2 = {"-in",carptausuario+"\\"+carptausuarioExtract+"\\"+"sample-2.html", "-el","-el","0,1"};
